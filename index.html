@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Bridge</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="index.js"></script>
+    <link href="index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5" style="border-right: 1px solid;">
+                <h4 class="heading">Department list</h4>
+                <div id="dispDepartmentTable">
+                    <table id="dptTable" class="table">
+                        <thead>
+                            <th scope="col">Department Name</th>
+                            <th scope="col">Edit </th>
+                            <th scope="col">Delete</th>
+                        </thead>
+                        <tbody id="departmentTable">
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <form class="container-employees" name="departmentForm" id="dptForm">
+                        <h4 class="heading" id="dptHeading">Create Department</h4>
+                        <label for="newdepartment" class="elements">
+                            <input type="text" name="newdepartment" id="dptname" placeholder="Enter Department name" style="width: 12em;" onchange="resetVisibleToggler()"/>
+                        </label>
+                        <input hidden value="false" id="hiddenDptField" />
+                        <input hidden value="" id="hfdptId" />
+                    </form>
+                    <div class="d-flex justify-content-around">
+                        <input type="button" class="btn btn-primary flex-fill m-2" onclick="submit_departmentname(event)"
+                            name="dSubmit" id="dptSubmit" value="Submit Department Name" />
+                        <input type="button"  id ="dptReset" class="btn btn-primary flex-fill m-2" onclick="resetDepartment()" disabled="true" value="Reset" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h4 class="heading">Employee list</h4>
+                <div id="dispEmployeesTable">
+                    <table id="empTable" class="table">
+                        <thead>
+                            <th scope="col">Employee Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col"> Department</th>
+                            <th scope="col">Is Contract</th>
+                            <th scope="col">Edit </th>
+                            <th scope="col">Delete</th>
+                        </thead>
+                        <tbody id="employeeTable"></tbody>
+                    </table>
+                </div>
+                <div>
+                    <form class="container-employees" name="EmpSubmit" id="idEmpDetails">
+                        <h4 class="heading" id="employeeHeading">Create Employee</h4>
+                        <label for="Employeename" class="elements">
+                            Name Of the Employee: <input type="text" id="empName" name="Employeename"
+                                placeholder="Name" />
+                        </label>
+                        <label for="contract" class="elements">
+                            Is Contract: Yes <input type="radio" name="contract" id="contractEmpYes" value="true" /> No
+                            <input type="radio" id="contractEmpNo" name="contract" value="false" />
+                        </label>
+                        <label for="age" class="elements">
+                            Age : <input type="text" name="age" id="age" placeholder="Age of the employee" />
+                        </label>
+                        <label for="department">
+                            Department :
+                            <input id="dpt"  name="departmentName"/>
+                        </label>
+                        <label for="addresss" class="elements">
+                            Address: <textarea name="addresss" id="empAddress"
+                                style="height: 50px; width: 10em;"></textarea>
+                        </label>
+                        <input hidden value="false" id="hiddenField" />
+                        <input hidden value="" id="empId" />
+                    </form>
+                    <div class="d-flex justify-content-around">
+                        <input type="button" class="btn btn-primary flex-fill m-2" onclick="submitEmpDetails(event)"
+                            name="eSubmit" id="eptSubmit" value="Submit Emp Details" />
+                        <input type="button" id="empReset" class="btn btn-primary flex-fill m-2" onclick="resetForm()" value="Reset" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
